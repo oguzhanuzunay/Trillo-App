@@ -1,0 +1,19 @@
+{
+  "name": "Trillo",
+  "version": "1.0.0",
+  "description": "Trillo app",
+  "main": "index.js",
+  "scripts": {
+    "sass-dev": "sass --watch --update --style=expanded sass:css",
+    "sass-prod": "sass --no-source-map --style=compressed sass:css"
+  },
+  "author": "Jonas",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "concat": "^1.0.3",
+    "npm-run-all": "^4.1.1",
+    "postcss-cli": "^10.1.0",
+    "sass": "^1.60.0"
+  }
+}
