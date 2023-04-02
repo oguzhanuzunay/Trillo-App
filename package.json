@@ -5,15 +5,22 @@
   "main": "index.js",
   "scripts": {
     "sass-dev": "sass --watch --update --style=expanded sass:css",
-    "sass-prod": "sass --no-source-map --style=compressed sass:css"
+    "compile": "sass --no-source-map --style=expanded sass/main.scss css/main.comp.css",
+    "prefix": "postcss --use autoprefixer -b 'last 10 versions' css/main.comp.css -o css/main.prefix.css",
+    "compress": "sass --no-source-map  --style=compressed css/main.prefix.css css/main.css",
+    "sass-prod": "npm-run-all compile prefix compress"
   },
-  "author": "Jonas",
+  "author": "Oguzhan",
   "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^10.4.14",
     "concat": "^1.0.3",
+    "cross-env": "^7.0.3",
     "npm-run-all": "^4.1.1",
     "postcss-cli": "^10.1.0",
     "sass": "^1.60.0"
+  },
+  "dependencies": {
+    "postcss": "^8.4.21"
   }
 }
